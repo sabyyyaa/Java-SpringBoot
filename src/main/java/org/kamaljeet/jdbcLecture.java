@@ -1,6 +1,6 @@
-package org.example;
+package org.kamaljeet;
 import java.sql.*;
-import java.util.*;
+
 public class jdbcLecture {
     public static void main(String[] args) throws Exception {
 
@@ -57,6 +57,7 @@ public class jdbcLecture {
         //stmt.execute(sql3);
 
                                                         //DELETE OPERATION :
+
         stmt.execute(sql4);
 
 

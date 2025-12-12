@@ -1,6 +1,5 @@
-package org.example;
+package org.kamaljeet;
 import java.sql.*;
-import java.sql.SQLException;
 
 public class PreparedStmt {
     public static void main(String args[]) throws Exception {
