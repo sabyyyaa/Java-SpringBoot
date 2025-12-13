@@ -13,7 +13,7 @@ public class Alien {
     private String aName;
     //@Transient    //to ignoer this attribute , and it will not be included in table as column
     private String Tech;
-    @OneToMany(mappedBy = "alien")
+    @ManyToMany
     private List<Laptop> laptops;
 
     public int getAid() {

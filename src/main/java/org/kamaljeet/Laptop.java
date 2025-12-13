@@ -1,9 +1,9 @@
 package org.kamaljeet;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
+
+import java.util.List;
+
 
 //@Embeddable   //to save these detail in same table instead of creating new table .
 @Entity
@@ -13,8 +13,8 @@ public class Laptop {
     private String brand;
     private String model;
     private int ram;
-    @ManyToOne
-    private Alien alien;
+    @ManyToMany(mappedBy = "laptops")
+    private List<Alien> aliens;
     public String getBrand() {
         return brand;
     }
@@ -23,12 +23,12 @@ public class Laptop {
         return id;
     }
 
-    public Alien getAlien() {
-        return alien;
+    public List<Alien> getAliens() {
+        return aliens;
     }
 
-    public void setAlien(Alien alien) {
-        this.alien = alien;
+    public void setAliens(List<Alien> aliens) {
+        this.aliens = aliens;
     }
 
     public void setId(int id) {
