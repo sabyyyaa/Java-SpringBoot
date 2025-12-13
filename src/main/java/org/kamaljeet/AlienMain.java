@@ -21,11 +21,12 @@ public class AlienMain {
         l1.setBrand("HP");
         l1.setModel("Pavilion");
         l1.setRam(16);
-
+        l1.setAlien(alien);
         l2.setId(2);
         l2.setBrand("Dell");
         l2.setModel("xps");
         l2.setRam(8);
+        l2.setAlien(alien);
         alien.setLaptops(Arrays.asList(l1,l2));
 
         SessionFactory sf = new Configuration()
