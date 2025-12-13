@@ -2,18 +2,30 @@ package org.kamaljeet;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
-@Table(name="Alien-Data")
+//@Table(name="Alien-Data")
 public class Alien {
     @Id
     private int aId;
-    //@Column(name="AlienName")
+    //@Column(name="AlienName")     //will change the column name
     private String aName;
-    //@Transient
+    //@Transient    //to ignoer this attribute , and it will not be included in table as column
     private String Tech;
+    @OneToMany
+    private List<Laptop> laptops;
 
     public int getAid() {
         return aId;
+    }
+
+    public List<Laptop> getLaptops() {
+        return laptops;
+    }
+
+    public void setLaptops(List<Laptop> laptops) {
+        this.laptops = laptops;
     }
 
     public String getAname() {
@@ -31,9 +43,10 @@ public class Alien {
     @Override
     public String toString() {
         return "Alien{" +
-                "aid=" + aId +
-                ", aname='" + aName + '\'' +
-                ", tech='" + Tech + '\'' +
+                "aId=" + aId +
+                ", aName='" + aName + '\'' +
+                ", Tech='" + Tech + '\'' +
+                ", laptop=" + laptops +
                 '}';
     }
 
